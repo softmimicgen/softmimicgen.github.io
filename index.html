@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="SoftMimicGen">
+  <meta name="keywords" content="SoftMimicGen">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SoftMimicGen</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-82MH79PQZG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-82MH79PQZG');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">SoftMimicGen: A Data Generation System for Scalable Robot Learning in Deformable Object Manipulation</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Large-scale robot datasets have facilitated the learning of a wide range of robot manipulation skills, 
+            but these datasets remain difficult to collect and scale further, owing to the intractable amount of 
+            human time, effort, and cost required. Simulation and synthetic data generation have proved to be 
+            an effective alternative to fuel this need for data, especially with the advent of recent work that 
+            shows that such synthetic datasets can dramatically reduce real-world data requirements and facilitate 
+            generalization to novel scenarios unseen in the real-world demonstrations. However, this paradigm has been 
+            limited to rigid-body tasks, which are easy to simulate. Deformable object manipulation encompasses a large 
+            portion of real-world manipulation and remains a crucial gap to address towards increasing adoption of the 
+            synthetic simulation data paradigm. In this paper, we introduce SoftMimicGen, an automated data generation 
+            pipeline for deformable object manipulation tasks. We introduce a suite of high-fidelity simulation 
+            environments that encompasses a wide range of deformable objects (stuffed animal, rope, tissue, towel) 
+            and manipulation behaviors (high-precision threading, dynamic whipping, folding, pick-and-place), across 
+            three different robot embodiments (robot arm, humanoid, surgical robot). We apply SoftMimicGen to generate 
+            datasets across the task suite and train high-performing agents from the data, and systematically analyze 
+            the data generation system.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <video controls width="100%" preload="metadata">
+            <source src="./static/images/Video/SoftMimicGen-Video-4k.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-three-quarters">
+        <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>SoftMimicGen generates large datasets for deformable object manipulation</strong></h3>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-three-quarters">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <video class="center" playsinline autoplay loop muted src="./static/images/Video/SMG.mp4" width="100%" style="border-radius:20px;"></video>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-three-quarters">
+        <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>SoftMimicGen generates large datasets for novel variants of deformable objects</strong></h3>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-three-quarters">
+        <!-- Row 1: Human Teleop -->
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h4 class="title is-5 has-text-centered" style="margin-bottom: 10px;">Human Teleoperated Dataset</h4>
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-three-quarters has-text-centered">
+            <video class="center" playsinline autoplay loop muted src="./static/images/Video/Towel-0.mp4" width="100%" style="border-radius:20px;"></video>
+          </div>
+        </div>
+        
+        <!-- Row 2: Generated Dataset -->
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h4 class="title is-5 has-text-centered" style="margin-bottom: 10px;">SoftMimicGen can generate large datasets for novel object variations, such as these towels that are different in size, shape, and color</h4>
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-half has-text-centered">
+            <video class="center" playsinline autoplay loop muted src="./static/images/Video/Towel-1.mp4" width="100%" style="border-radius:20px;"></video>
+          </div>
+          <div class="column is-half has-text-centered">
+            <video class="center" playsinline autoplay loop muted src="./static/images/Video/Towel-2.mp4" width="100%" style="border-radius:20px;"></video>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-three-quarters">
+        <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>SoftMimicGen efficiently generates deformable object datasets with minimal human input</strong></h3>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-three-quarters">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <video class="center" playsinline autoplay loop muted src="./static/images/Video/mosaic.mp4" width="100%" style="border-radius:20px;"></video>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-three-quarters">
+        <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>SoftMimicGen data generation pipeline overview</strong></h3>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- SoftMimicGen data generation pipeline. -->
+
+    <!-- Row 1: Registration -->
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <div class="has-text-centered">
+            <img src="./static/images/registration.png" alt="Registration" style="width: 100%; height: auto; border-radius: 10px;">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Transfer -->
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <div class="has-text-centered">
+            <img src="./static/images/transfer.png" alt="Transfer" style="width: 100%; height: auto; border-radius: 10px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  <!--/ SoftMimicGen data generation pipeline. -->
+
+</div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-three-quarters">
+        <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>Learning high-performance visuomotor policies</strong></h3>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- BC policies. -->
+
+    <!-- Row 1: GR1 - Towel, Teddy -->
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div class="content">
+          <video id="gr1-towel-bc" autoplay muted loop playsinline height="100%">
+            <source src="./static/images/BC/GR1-Towel-BC.mov"
+                    type="video/mp4">
+          </video>
+          <h4 class="title is-5 has-text-centered">Humanoid - Towel Unfold</h4>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="content">
+          <video id="gr1-teddy-bc" autoplay muted loop playsinline height="100%">
+            <source src="./static/images/BC/GR1-Teddy-BC.mov"
+                    type="video/mp4">
+          </video>
+          <h4 class="title is-5 has-text-centered">Humanoid - Teddy</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Franka - Rope, Jenga -->
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div class="content">
+          <video id="rope-bc" autoplay muted loop playsinline height="100%">
+            <source src="./static/images/BC/Rope-BC.mp4"
+                    type="video/mp4">
+          </video>
+          <h4 class="title is-5 has-text-centered">Franka - Rope Manipulation</h4>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="content">
+          <video id="jenga-bc" autoplay muted loop playsinline height="100%">
+            <source src="./static/images/BC/Jenga-BC.mp4"
+                    type="video/mp4">
+          </video>
+          <h4 class="title is-5 has-text-centered">Franka - Jenga</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: Franka - Towel, Stack -->
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div class="content">
+          <video id="towel-bc" autoplay muted loop playsinline height="100%">
+            <source src="./static/images/BC/Towel-BC.mp4"
+                    type="video/mp4">
+          </video>
+          <h4 class="title is-5 has-text-centered">Franka - Towel</h4>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="content">
+          <video id="stack-bc" autoplay muted loop playsinline height="100%">
+            <source src="./static/images/BC/Stack-BC.mp4"
+                    type="video/mp4">
+          </video>
+          <h4 class="title is-5 has-text-centered">Franka - Cube Stack</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 4: Tissue, Threading -->
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div class="content">
+          <video id="tissue-bc" autoplay muted loop playsinline height="100%">
+            <source src="./static/images/BC/Tissue-BC.mp4"
+                    type="video/mp4">
+          </video>
+          <h4 class="title is-5 has-text-centered">Surgical - Tissue Manipulation</h4>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="content">
+          <video id="threading-bc" autoplay muted loop playsinline height="100%">
+            <source src="./static/images/BC/Threading-BC.mp4"
+                    type="video/mp4">
+          </video>
+          <h4 class="title is-5 has-text-centered">Surgical - Threading</h4>
+        </div>
+      </div>
+    </div>
+  <!--/ BC policies. -->
+
+</div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-three-quarters">
+        <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>Tasks reset distribution</strong></h3>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Tasks reset distribution. -->
+
+    <!-- Row 1: GR1 - Towel, Teddy -->
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div class="content">
+          <video id="gr1-towel-dist" autoplay muted loop playsinline height="100%">
+            <source src="./static/images/Reset_Dists/GR1-Towel-Dist.mp4"
+                    type="video/mp4">
+          </video>
+          <h4 class="title is-5 has-text-centered">Humanoid - Towel Unfold</h4>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="content">
+          <video id="gr1-teddy-dist" autoplay muted loop playsinline height="100%">
+            <source src="./static/images/Reset_Dists/GR1-Teddy-Dist.mp4"
+                    type="video/mp4">
+          </video>
+          <h4 class="title is-5 has-text-centered">Humanoid - Teddy</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Franka - Rope, Jenga -->
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div class="content">
+          <video id="rope-dist" autoplay muted loop playsinline height="100%">
+            <source src="./static/images/Reset_Dists/Rope-Dist.mp4"
+                    type="video/mp4">
+          </video>
+          <h4 class="title is-5 has-text-centered">Franka - Rope Manipulation</h4>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="content">
+          <video id="jenga-dist" autoplay muted loop playsinline height="100%">
+            <source src="./static/images/Reset_Dists/Jenga-Dist.mp4"
+                    type="video/mp4">
+          </video>
+          <h4 class="title is-5 has-text-centered">Franka - Jenga</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: Franka - Towel, Cube Stack -->
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div class="content">
+          <video id="towel-dist" autoplay muted loop playsinline height="100%">
+            <source src="./static/images/Reset_Dists/Towel-Dist.mp4"
+                    type="video/mp4">
+          </video>
+          <h4 class="title is-5 has-text-centered">Franka - Towel</h4>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="content">
+          <video id="stack-dist" autoplay muted loop playsinline height="100%">
+            <source src="./static/images/Reset_Dists/Stack-Dist.mp4"
+                    type="video/mp4">
+          </video>
+          <h4 class="title is-5 has-text-centered">Franka - Cube Stack</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 4: Tissue, Threading -->
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div class="content">
+          <video id="tissue-dist" autoplay muted loop playsinline height="100%">
+            <source src="./static/images/Reset_Dists/Tissue-Dist.mp4"
+                    type="video/mp4">
+          </video>
+          <h4 class="title is-5 has-text-centered">Surgical - Tissue Manipulation</h4>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="content">
+          <video id="threading-dist" autoplay muted loop playsinline height="100%">
+            <source src="./static/images/Reset_Dists/Threading-Dist.mp4"
+                    type="video/mp4">
+          </video>
+          <h4 class="title is-5 has-text-centered">Surgical - Threading</h4>
+        </div>
+      </div>
+    </div>
+  <!--/ Tasks reset distribution. -->
+
+</div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            The template of this website is borrowed from the source code of 
+             <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+             The template is licensed under a 
+             <a rel="license"
+             href="http://creativecommons.org/licenses/by-sa/4.0/">
+             Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
