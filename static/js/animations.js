@@ -1,5 +1,6 @@
 gsap.registerPlugin(ScrollTrigger);
 
+/*
 window.addEventListener('load', function() {
   setTimeout(function() {
     const loadingScreen = document.getElementById('loading-screen');
@@ -17,6 +18,7 @@ gsap.to('.publication-title', {
   delay: 0.8,
   ease: 'power3.out'
 });
+*/
 
 const fadeInSections = document.querySelectorAll('.fade-in-section');
 const observerOptions = {

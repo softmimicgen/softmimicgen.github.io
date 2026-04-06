@@ -171,8 +171,8 @@ body {
 
 /* Title Styles */
 .publication-title {
-  opacity: 0;
-  transform: translateY(-20px);
+  opacity: 1;
+  transform: none;
   font-weight: 500 !important;
   letter-spacing: 0.5px;
   font-size: 3.5rem !important;
